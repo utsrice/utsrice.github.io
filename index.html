@@ -3,10 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Connect With Us</title>
-<meta name="description" content="All our links in one place: WhatsApp, LinkedIn, website, Facebook and Instagram.">
+<title>UTS RICE COMPANY | Connect</title>
+<meta name="description" content="U.T.S Group of Companies: premium rice and food exporters from Pakistan. Connect with us on WhatsApp, WeChat, LinkedIn, Facebook and Instagram.">
+<meta name="theme-color" content="#17281c">
+<meta property="og:title" content="UTS RICE COMPANY">
+<meta property="og:description" content="Let's Grow Together. All our links in one place.">
+<meta property="og:image" content="https://utsrice.github.io/logo.jpg">
+<link rel="icon" href="logo.jpg">
+<link rel="apple-touch-icon" href="logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
   /* ==========================================================
@@ -14,192 +21,265 @@
      ========================================================== */
   const CONFIG = {
     companyName: "UTS RICE COMPANY",
-    tagline: "Scan, tap, and connect with us",
-    logoText: "UTS",         // initials shown in the circle (or set logoUrl)
-    logoUrl: "",             // e.g. "logo.png" — leave empty to use logoText
-    brandColor: "#0f766e",   // your main brand colour
+    groupName: "U.T.S Group of Companies",
+    tagline: "“Let’s Grow Together”",
+    intro: "Premium rice & food exporters from Pakistan",
+    logoUrl: "logo.jpg",
 
-    // The public address where this page will be hosted.
-    // The QR code points here. Leave empty to use the current page address.
+    // The public address where this page is hosted. The QR code points here.
     pageUrl: "https://utsrice.github.io/",
 
     links: {
-      whatsapp:  "https://wa.me/923322227417",            // wa.me/<country code + number, no + or spaces>
+      whatsapp:  "https://wa.me/923322227417",
       linkedin:  "https://www.linkedin.com/in/uts-rice-co-284343414/",
       website:   "https://uts-rice-two.vercel.app/",
       facebook:  "https://www.facebook.com/utsricecompany",
       instagram: "https://www.instagram.com/utsrice.pk/"
     },
 
-    // WeChat: save your QR from WeChat (Me > QR Code > Save Image) next to this file
+    // WeChat QR image (saved next to this file) and optional WeChat ID
     wechat: {
-      qrImage: "wechat-qr.jpg",   // leave both empty to hide the WeChat button
-      id: ""                      // optional: your WeChat ID, shown with a Copy button
+      qrImage: "wechat-qr.jpg",
+      id: ""
     }
   };
 </script>
 <style>
   :root {
-    --brand: #0f766e;
-    --bg: #f4f6f8;
-    --card: #ffffff;
-    --text: #111827;
-    --muted: #6b7280;
-    --border: #e5e7eb;
+    --green: #245138;
+    --green-deep: #17281c;
+    --green-ink: #12301d;
+    --gold: #dfab64;
+    --gold-deep: #b9853c;
+    --maroon: #b4483f;
+
+    --bg: #f5f0e6;
+    --card: #fffdf8;
+    --text: #1b2a20;
+    --muted: #6b6a5c;
+    --border: #e8dfcc;
     --btn: #ffffff;
-    --btn-hover: #f9fafb;
-    --shadow: 0 10px 30px rgba(17, 24, 39, .08);
+    --btn-hover: #fbf6ea;
+    --tile: var(--green);
+    --shadow: 0 18px 40px rgba(23, 40, 28, .18);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #0b0f14; --card: #131a22; --text: #f3f4f6; --muted: #9ca3af;
-      --border: #243040; --btn: #18212b; --btn-hover: #1e2935;
-      --shadow: 0 10px 30px rgba(0,0,0,.4);
+      --bg: #0d1912; --card: #14251a; --text: #f3ecdd; --muted: #b5ad99;
+      --border: #2a3f30; --btn: #193022; --btn-hover: #1f3a29; --tile: #24503a;
+      --shadow: 0 18px 40px rgba(0,0,0,.45);
     }
   }
   :root[data-theme="dark"] {
-    --bg: #0b0f14; --card: #131a22; --text: #f3f4f6; --muted: #9ca3af;
-    --border: #243040; --btn: #18212b; --btn-hover: #1e2935;
-    --shadow: 0 10px 30px rgba(0,0,0,.4);
+    --bg: #0d1912; --card: #14251a; --text: #f3ecdd; --muted: #b5ad99;
+    --border: #2a3f30; --btn: #193022; --btn-hover: #1f3a29; --tile: #24503a;
+    --shadow: 0 18px 40px rgba(0,0,0,.45);
   }
+
   * { box-sizing: border-box; }
   html, body { margin: 0; }
   body {
-    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    font-family: "Poppins", system-ui, -apple-system, sans-serif;
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
     display: flex; justify-content: center;
-    padding: 40px 16px;
+    padding: 56px 16px 32px;
+    position: relative;
+    overflow-x: hidden;
   }
-  body::before {
-    content: ""; position: fixed; inset: 0 0 auto 0; height: 220px; z-index: -1;
-    background: linear-gradient(160deg, var(--brand), color-mix(in srgb, var(--brand) 60%, #000));
+
+  /* Green hero band with gold swoosh, like the company profile cover */
+  .hero {
+    position: absolute; inset: 0 0 auto 0; height: 300px; z-index: 0;
+    background:
+      radial-gradient(120% 90% at 50% 0%, #2e6044 0%, var(--green) 45%, var(--green-deep) 100%);
+    overflow: hidden;
   }
+  .hero svg.swoosh { position: absolute; left: 0; bottom: -2px; width: 100%; height: 90px; }
+  .hero svg.wheat { position: absolute; opacity: .10; width: 180px; height: 180px; }
+  .hero svg.wheat.l { left: -30px; top: 20px; }
+  .hero svg.wheat.r { right: -30px; top: 30px; transform: scaleX(-1); }
+
   .card {
+    position: relative; z-index: 1;
     width: 100%; max-width: 440px;
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 24px;
+    border-radius: 26px;
     box-shadow: var(--shadow);
-    padding: 32px 24px 24px;
+    padding: 0 22px 26px;
     text-align: center;
     align-self: flex-start;
+    margin-top: 44px;
   }
+  .card::before {
+    content: ""; position: absolute; inset: 0; border-radius: 26px; pointer-events: none;
+    border-top: 3px solid var(--gold);
+  }
+
   .logo {
-    width: 84px; height: 84px; border-radius: 50%;
-    margin: -74px auto 14px;
-    background: var(--brand); color: #fff;
-    display: grid; place-items: center;
-    font-size: 28px; font-weight: 700; letter-spacing: .5px;
-    border: 4px solid var(--card);
+    width: 116px; height: 116px; border-radius: 50%;
+    margin: -58px auto 14px;
+    background: var(--green);
+    border: 3px solid var(--gold);
+    box-shadow: 0 0 0 6px var(--card), 0 10px 24px rgba(23,40,28,.35);
     overflow: hidden;
   }
-  .logo img { width: 100%; height: 100%; object-fit: cover; }
-  h1 { font-size: 24px; margin: 0 0 6px; font-weight: 700; }
-  .tagline { color: var(--muted); margin: 0 0 24px; font-size: 15px; }
+  .logo img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.12); }
+
+  h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 700; font-size: 26px; letter-spacing: .5px;
+    margin: 0; color: var(--text);
+  }
+  .group {
+    font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--muted); margin: 6px 0 0;
+  }
+  .tagline {
+    font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 500;
+    color: var(--gold-deep); font-size: 19px; margin: 14px 0 4px;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tagline { color: var(--gold); } }
+  :root[data-theme="dark"] .tagline { color: var(--gold); }
+  .intro { color: var(--muted); font-size: 14px; margin: 0 0 22px; }
+
+  .rule {
+    display: flex; align-items: center; gap: 10px; margin: 0 0 20px;
+    color: var(--gold); font-size: 14px;
+  }
+  .rule::before, .rule::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+  .rule::after { background: linear-gradient(90deg, var(--gold), transparent); }
 
   .links { display: grid; gap: 12px; }
   .link {
     display: flex; align-items: center; gap: 14px;
-    padding: 14px 16px;
+    width: 100%;
+    padding: 12px 14px;
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 16px;
     background: var(--btn);
     color: var(--text); text-decoration: none;
-    font-weight: 600; font-size: 16px;
-    transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    font: inherit; font-weight: 600; font-size: 15.5px;
+    cursor: pointer;
+    transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
   }
-  .link:hover { background: var(--btn-hover); transform: translateY(-1px); border-color: var(--c); }
-  .link:focus-visible { outline: 2px solid var(--c); outline-offset: 2px; }
+  .link:hover { background: var(--btn-hover); border-color: var(--gold); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(23,40,28,.08); }
+  .link:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
   .icon {
-    width: 40px; height: 40px; border-radius: 10px; flex: none;
+    width: 42px; height: 42px; border-radius: 12px; flex: none;
     display: grid; place-items: center;
-    background: var(--c); color: #fff;
+    background: var(--tile); color: var(--gold);
+    box-shadow: inset 0 0 0 1px rgba(223,171,100,.35);
   }
   .icon svg { width: 22px; height: 22px; fill: currentColor; }
   .link .label { flex: 1; text-align: left; }
-  .link .sub { display: block; font-weight: 400; font-size: 13px; color: var(--muted); }
-  .arrow { color: var(--muted); font-size: 18px; }
+  .link .sub { display: block; font-weight: 400; font-size: 12.5px; color: var(--muted); margin-top: 1px; }
+  .arrow { color: var(--gold-deep); font-size: 20px; line-height: 1; }
 
-  .qr-section {
-    margin-top: 28px; padding-top: 24px;
-    border-top: 1px dashed var(--border);
+  .qr-section { margin-top: 28px; }
+  .qr-section h2 {
+    font-family: "Playfair Display", Georgia, serif; font-weight: 600;
+    font-size: 19px; margin: 0 0 4px;
   }
-  .qr-section h2 { font-size: 16px; margin: 0 0 4px; }
   .qr-section p { color: var(--muted); font-size: 13px; margin: 0 0 16px; }
   #qr {
     display: inline-block; padding: 14px; background: #fff;
-    border-radius: 16px; border: 1px solid var(--border);
+    border-radius: 18px; border: 2px solid var(--gold);
   }
-  #qr img, #qr canvas { display: block; width: 200px; height: 200px; }
+  #qr img, #qr canvas { display: block; width: 190px; height: 190px; }
+  .qr-url { font-size: 12px; color: var(--muted); margin-top: 10px; word-break: break-all; }
   .qr-actions { display: flex; gap: 10px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
-  button {
-    font: inherit; font-size: 14px; font-weight: 600;
-    padding: 10px 16px; border-radius: 10px; cursor: pointer;
+  button.btn, a.btn {
+    font: inherit; font-size: 13.5px; font-weight: 600; text-decoration: none;
+    padding: 10px 16px; border-radius: 999px; cursor: pointer;
     border: 1px solid var(--border); background: var(--btn); color: var(--text);
   }
-  button.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
-  button:hover { filter: brightness(1.05); }
-  .qr-url { font-size: 12px; color: var(--muted); margin-top: 10px; word-break: break-all; }
-  footer { margin-top: 24px; font-size: 12px; color: var(--muted); }
-  button.link { width: 100%; font: inherit; font-weight: 600; font-size: 16px; cursor: pointer; }
+  .btn.primary { background: var(--green); border-color: var(--green); color: #fff; }
+  .btn:hover { filter: brightness(1.06); }
+
+  footer { margin-top: 26px; }
+  .motto {
+    font-size: 10.5px; letter-spacing: 1.8px; text-transform: uppercase; font-weight: 600; white-space: nowrap;
+    color: var(--green); display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .motto { color: var(--gold); } }
+  :root[data-theme="dark"] .motto { color: var(--gold); }
+  .motto .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+  .copy { font-size: 12px; color: var(--muted); margin-top: 10px; }
 
   /* WeChat pop-up */
   .modal {
     position: fixed; inset: 0; z-index: 10;
-    background: rgba(0,0,0,.55);
+    background: rgba(10, 20, 14, .6);
     display: none; align-items: center; justify-content: center; padding: 16px;
   }
   .modal.open { display: flex; }
   .modal-box {
     background: var(--card); color: var(--text);
-    border-radius: 20px; padding: 24px; width: 100%; max-width: 340px; text-align: center;
-    border: 1px solid var(--border); box-shadow: var(--shadow);
+    border-radius: 22px; padding: 24px; width: 100%; max-width: 340px; text-align: center;
+    border: 1px solid var(--border); border-top: 3px solid var(--gold); box-shadow: var(--shadow);
   }
-  .modal-box h3 { margin: 0 0 4px; font-size: 18px; }
+  .modal-box h3 { font-family: "Playfair Display", Georgia, serif; margin: 0 0 4px; font-size: 20px; }
   .modal-box p { margin: 0 0 16px; color: var(--muted); font-size: 13px; }
   .modal-box img {
     width: 260px; max-width: 100%; height: auto; max-height: 60vh; object-fit: contain;
-    background: #fff; border-radius: 12px; border: 1px solid var(--border); padding: 4px; display: block; margin: 0 auto;
+    background: #fff; border-radius: 14px; border: 1px solid var(--border); padding: 4px; display: block; margin: 0 auto;
   }
   .wechat-id { margin: 14px 0; font-size: 15px; }
-  .wechat-id strong { font-weight: 700; }
   .img-missing { padding: 40px 12px; border: 1px dashed var(--border); border-radius: 12px; color: var(--muted); font-size: 13px; }
 
-  /* Print = a clean QR poster / flyer */
   @media print {
     body { background: #fff; padding: 0; }
-    body::before { display: none; }
-    .card { box-shadow: none; border: none; max-width: none; }
-    .links, .qr-actions, footer, .modal { display: none !important; }
-    .logo { margin-top: 0; }
-    .qr-section { border: none; }
+    .hero, .links, .qr-actions, .modal, .rule { display: none !important; }
+    .card { box-shadow: none; border: none; max-width: none; margin-top: 0; }
+    .card::before { display: none; }
+    .logo { margin-top: 0; box-shadow: none; }
     #qr img, #qr canvas { width: 320px; height: 320px; }
   }
 </style>
 </head>
 <body>
+  <div class="hero" aria-hidden="true">
+    <svg class="wheat l" viewBox="0 0 100 100"><g fill="#dfab64"><path d="M50 95 C50 60 52 30 60 5" stroke="#dfab64" stroke-width="2" fill="none"/><ellipse cx="57" cy="20" rx="4" ry="9" transform="rotate(25 57 20)"/><ellipse cx="65" cy="22" rx="4" ry="9" transform="rotate(-30 65 22)"/><ellipse cx="54" cy="35" rx="4" ry="9" transform="rotate(25 54 35)"/><ellipse cx="62" cy="37" rx="4" ry="9" transform="rotate(-30 62 37)"/><ellipse cx="52" cy="50" rx="4" ry="9" transform="rotate(25 52 50)"/><ellipse cx="60" cy="52" rx="4" ry="9" transform="rotate(-30 60 52)"/></g></svg>
+    <svg class="wheat r" viewBox="0 0 100 100"><g fill="#dfab64"><path d="M50 95 C50 60 52 30 60 5" stroke="#dfab64" stroke-width="2" fill="none"/><ellipse cx="57" cy="20" rx="4" ry="9" transform="rotate(25 57 20)"/><ellipse cx="65" cy="22" rx="4" ry="9" transform="rotate(-30 65 22)"/><ellipse cx="54" cy="35" rx="4" ry="9" transform="rotate(25 54 35)"/><ellipse cx="62" cy="37" rx="4" ry="9" transform="rotate(-30 62 37)"/><ellipse cx="52" cy="50" rx="4" ry="9" transform="rotate(25 52 50)"/><ellipse cx="60" cy="52" rx="4" ry="9" transform="rotate(-30 60 52)"/></g></svg>
+    <svg class="swoosh" viewBox="0 0 400 90" preserveAspectRatio="none">
+      <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#b9853c"/><stop offset=".5" stop-color="#f3d08f"/><stop offset="1" stop-color="#b9853c"/></linearGradient></defs>
+      <path d="M0 40 Q200 95 400 40 L400 90 L0 90 Z" fill="var(--bg)"/>
+      <path d="M0 40 Q200 95 400 40" fill="none" stroke="url(#g)" stroke-width="3"/>
+      <path d="M0 30 Q200 82 400 30" fill="none" stroke="url(#g)" stroke-width="1" opacity=".6"/>
+    </svg>
+  </div>
+
   <main class="card">
-    <div class="logo" id="logo"></div>
+    <div class="logo"><img id="logoImg" alt="UTS logo"></div>
     <h1 id="name"></h1>
+    <p class="group" id="group"></p>
     <p class="tagline" id="tagline"></p>
+    <p class="intro" id="intro"></p>
+
+    <div class="rule" aria-hidden="true">✻</div>
 
     <nav class="links" id="links" aria-label="Our links"></nav>
 
     <section class="qr-section">
+      <div class="rule" aria-hidden="true">✻</div>
       <h2>Share this page</h2>
       <p>Scan the code to open all our links on your phone</p>
       <div id="qr" role="img" aria-label="QR code for this page"></div>
       <div class="qr-url" id="qrUrl"></div>
       <div class="qr-actions">
-        <button class="primary" id="download">Download QR</button>
-        <button id="share">Share link</button>
-        <button id="print">Print poster</button>
+        <button class="btn primary" id="download">Download QR</button>
+        <button class="btn" id="share">Share link</button>
+        <button class="btn" id="print">Print poster</button>
       </div>
     </section>
 
-    <footer>© <span id="year"></span> <span id="footName"></span></footer>
+    <footer>
+      <div class="motto">Natural Goodness <span class="dot"></span> Global Markets</div>
+      <div class="copy">© <span id="year"></span> <span id="footName"></span></div>
+    </footer>
   </main>
 
   <div class="modal" id="wechatModal" role="dialog" aria-modal="true" aria-labelledby="wcTitle">
@@ -209,9 +289,9 @@
       <div id="wcImgWrap"></div>
       <div class="wechat-id" id="wcIdRow">WeChat ID: <strong id="wcId"></strong></div>
       <div class="qr-actions">
-        <a class="primary-link" id="wcSave" href="wechat-qr.jpg" download><button class="primary" type="button" tabindex="-1">Save QR</button></a>
-        <button class="primary" id="wcCopy">Copy ID</button>
-        <button id="wcClose">Close</button>
+        <a class="btn primary" id="wcSave" download>Save QR</a>
+        <button class="btn" id="wcCopy">Copy ID</button>
+        <button class="btn" id="wcClose">Close</button>
       </div>
     </div>
   </div>
@@ -219,111 +299,93 @@
 <script>
   const ICONS = {
     whatsapp: '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>',
+    wechat: '<svg viewBox="0 0 24 24"><path d="M9 3C4.6 3 1 6 1 9.7c0 2.1 1.1 4 3 5.2l-.7 2.3 2.7-1.4c.9.3 1.9.4 3 .4h.6a5.7 5.7 0 0 1-.2-1.5c0-3.5 3.4-6.3 7.5-6.3h.6C16.8 5.3 13.3 3 9 3zM6.2 8.5a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2zm5.6 0a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2zM23 14.7c0-3-3-5.4-6.5-5.4S10 11.7 10 14.7s3 5.4 6.5 5.4c.8 0 1.6-.1 2.3-.4l2.2 1.2-.6-1.9c1.6-1 2.6-2.6 2.6-4.3zm-8.7-.8a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8zm4.4 0a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>',
     linkedin: '<svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3V9.5zm7 0h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6.1V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4V9.5z"/></svg>',
     website: '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-3a15.6 15.6 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8zM12 4c.8 1.2 1.5 2.5 1.9 4h-3.8c.4-1.5 1.1-2.8 1.9-4zM4.3 14a8.2 8.2 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4H4.3zm.8 2h3a15.6 15.6 0 0 0 1.4 3.6A8 8 0 0 1 5.1 16zm3-8h-3a8 8 0 0 1 4.4-3.6C8.9 5.5 8.4 6.7 8.1 8zM12 20c-.8-1.2-1.5-2.5-1.9-4h3.8c-.4 1.5-1.1 2.8-1.9 4zm2.3-6H9.7a14.7 14.7 0 0 1 0-4h4.6a14.7 14.7 0 0 1 0 4zm.2 5.6c.6-1.1 1.1-2.3 1.4-3.6h3a8 8 0 0 1-4.4 3.6zm1.8-5.6a16.5 16.5 0 0 0 0-4h3.4a8.2 8.2 0 0 1 0 4h-3.4z"/></svg>',
     facebook: '<svg viewBox="0 0 24 24"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.2C16.7 2.1 15.6 2 14.4 2 11.8 2 10 3.6 10 6.5v2H7.3V12H10v10h4V12h2.8l.4-3.5H14z"/></svg>',
-    wechat: '<svg viewBox="0 0 24 24"><path d="M9 3C4.6 3 1 6 1 9.7c0 2.1 1.1 4 3 5.2l-.7 2.3 2.7-1.4c.9.3 1.9.4 3 .4h.6a5.7 5.7 0 0 1-.2-1.5c0-3.5 3.4-6.3 7.5-6.3h.6C16.8 5.3 13.3 3 9 3zM6.2 8.5a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2zm5.6 0a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2zM23 14.7c0-3-3-5.4-6.5-5.4S10 11.7 10 14.7s3 5.4 6.5 5.4c.8 0 1.6-.1 2.3-.4l2.2 1.2-.6-1.9c1.6-1 2.6-2.6 2.6-4.3zm-8.7-.8a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8zm4.4 0a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>',
     instagram: '<svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM21.9 7.9c-.1-1.6-.4-3-1.6-4.2S17.7 2.2 16.1 2.1C14.5 2 9.5 2 7.9 2.1 6.3 2.2 4.9 2.5 3.7 3.7S2.2 6.3 2.1 7.9C2 9.5 2 14.5 2.1 16.1c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.6.1 6.6.1 8.2 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.1-1.6.1-6.6 0-8.2zm-2.1 10a3.3 3.3 0 0 1-1.9 1.9c-1.3.5-4.4.4-5.9.4s-4.6.1-5.9-.4a3.3 3.3 0 0 1-1.9-1.9c-.5-1.3-.4-4.4-.4-5.9s-.1-4.6.4-5.9a3.3 3.3 0 0 1 1.9-1.9C7.4 3.7 10.5 3.8 12 3.8s4.6-.1 5.9.4a3.3 3.3 0 0 1 1.9 1.9c.5 1.3.4 4.4.4 5.9s.1 4.6-.4 5.9z"/></svg>'
   };
 
   const ITEMS = [
-    { key: "whatsapp",  label: "Chat on WhatsApp", sub: "Message us directly", color: "#25D366" },
-    { key: "linkedin",  label: "LinkedIn",         sub: "Connect with us", color: "#0A66C2" },
-    { key: "website",   label: "Visit our website", sub: "Products & services", color: "var(--brand)" },
-    { key: "facebook",  label: "Facebook",          sub: "Like our page", color: "#1877F2" },
-    { key: "instagram", label: "Instagram",         sub: "See our latest posts", color: "#E1306C" }
+    { key: "whatsapp",  label: "Chat on WhatsApp",  sub: "Message us directly" },
+    { key: "wechat",    label: "WeChat",            sub: "Scan our QR to add us" },
+    { key: "linkedin",  label: "LinkedIn",          sub: "Connect with us" },
+    { key: "website",   label: "Visit our website", sub: "Rice, wheat, maize & more" },
+    { key: "facebook",  label: "Facebook",          sub: "Like our page" },
+    { key: "instagram", label: "Instagram",         sub: "See our latest posts" }
   ];
 
-  // Header
-  document.documentElement.style.setProperty("--brand", CONFIG.brandColor);
-  document.title = CONFIG.companyName + " | Connect";
-  const logo = document.getElementById("logo");
-  if (CONFIG.logoUrl) logo.innerHTML = '<img alt="" src="' + CONFIG.logoUrl + '">';
-  else logo.textContent = CONFIG.logoText;
-  document.getElementById("name").textContent = CONFIG.companyName;
-  document.getElementById("footName").textContent = CONFIG.companyName;
-  document.getElementById("tagline").textContent = CONFIG.tagline;
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const $ = id => document.getElementById(id);
+  $("logoImg").src = CONFIG.logoUrl;
+  $("name").textContent = CONFIG.companyName;
+  $("group").textContent = CONFIG.groupName;
+  $("tagline").textContent = CONFIG.tagline;
+  $("intro").textContent = CONFIG.intro;
+  $("footName").textContent = CONFIG.groupName;
+  $("year").textContent = new Date().getFullYear();
 
-  // Link buttons (empty links are hidden)
-  const nav = document.getElementById("links");
+  const wc = CONFIG.wechat || {};
+  const nav = $("links");
   ITEMS.forEach(it => {
-    const url = CONFIG.links[it.key];
-    if (!url) return;
-    const a = document.createElement("a");
-    a.className = "link";
-    a.href = url;
-    a.target = "_blank";
-    a.rel = "noopener";
-    a.style.setProperty("--c", it.color);
-    a.innerHTML = '<span class="icon">' + ICONS[it.key] + '</span>' +
+    const isWeChat = it.key === "wechat";
+    if (isWeChat ? !(wc.qrImage || wc.id) : !CONFIG.links[it.key]) return;
+    const el = document.createElement(isWeChat ? "button" : "a");
+    el.className = "link";
+    if (isWeChat) { el.type = "button"; el.id = "wechatBtn"; }
+    else { el.href = CONFIG.links[it.key]; el.target = "_blank"; el.rel = "noopener"; }
+    el.innerHTML = '<span class="icon">' + ICONS[it.key] + '</span>' +
       '<span class="label">' + it.label + '<span class="sub">' + it.sub + '</span></span>' +
       '<span class="arrow" aria-hidden="true">›</span>';
-    nav.appendChild(a);
+    nav.appendChild(el);
   });
 
-  // WeChat button + pop-up
-  const wc = CONFIG.wechat || {};
-  if (wc.qrImage || wc.id) {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = "link";
-    b.style.setProperty("--c", "#07C160");
-    b.innerHTML = '<span class="icon">' + ICONS.wechat + '</span>' +
-      '<span class="label">WeChat<span class="sub">Scan our QR to add us</span></span>' +
-      '<span class="arrow" aria-hidden="true">›</span>';
-    // place after WhatsApp
-    nav.insertBefore(b, nav.children[1] || null);
-
-    const modal = document.getElementById("wechatModal");
-    const wrap = document.getElementById("wcImgWrap");
+  // WeChat pop-up
+  if ($("wechatBtn")) {
+    const modal = $("wechatModal"), wrap = $("wcImgWrap");
     if (wc.qrImage) {
       const img = new Image();
       img.alt = "WeChat QR code";
       img.src = wc.qrImage;
-      img.onerror = () => { wrap.innerHTML = '<div class="img-missing">Add your WeChat QR image as <b>' + wc.qrImage + '</b> next to this page</div>'; };
+      img.onerror = () => { wrap.innerHTML = '<div class="img-missing">WeChat QR image not found</div>'; };
       wrap.appendChild(img);
-      document.getElementById("wcSave").href = wc.qrImage;
-    } else {
-      document.getElementById("wcSave").style.display = "none";
-    }
-    if (wc.id) document.getElementById("wcId").textContent = wc.id;
-    else { document.getElementById("wcIdRow").style.display = "none"; document.getElementById("wcCopy").style.display = "none"; }
-
+      $("wcSave").href = wc.qrImage;
+    } else $("wcSave").style.display = "none";
+    if (wc.id) $("wcId").textContent = wc.id;
+    else { $("wcIdRow").style.display = "none"; $("wcCopy").style.display = "none"; }
     const close = () => modal.classList.remove("open");
-    b.onclick = () => modal.classList.add("open");
-    document.getElementById("wcClose").onclick = close;
+    $("wechatBtn").onclick = () => modal.classList.add("open");
+    $("wcClose").onclick = close;
     modal.onclick = e => { if (e.target === modal) close(); };
     document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
-    document.getElementById("wcCopy").onclick = async () => {
-      try { await navigator.clipboard.writeText(wc.id); document.getElementById("wcCopy").textContent = "Copied!"; } catch (e) {}
+    $("wcCopy").onclick = async () => {
+      try { await navigator.clipboard.writeText(wc.id); $("wcCopy").textContent = "Copied!"; } catch (e) {}
     };
   }
 
-  // QR code
+  // Page QR code
   const isWeb = /^https?:/.test(location.protocol);
   const qrTarget = CONFIG.pageUrl || (isWeb ? location.href.split("#")[0] : CONFIG.links.website);
-  document.getElementById("qrUrl").textContent = qrTarget;
-  new QRCode(document.getElementById("qr"), {
+  $("qrUrl").textContent = qrTarget.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  new QRCode($("qr"), {
     text: qrTarget, width: 600, height: 600,
-    colorDark: "#111827", colorLight: "#ffffff",
+    colorDark: "#12301d", colorLight: "#ffffff",
     correctLevel: QRCode.CorrectLevel.H
   });
 
-  document.getElementById("download").onclick = () => {
+  $("download").onclick = () => {
     const canvas = document.querySelector("#qr canvas");
     const a = document.createElement("a");
-    a.download = CONFIG.companyName.replace(/\s+/g, "-").toLowerCase() + "-qr.png";
+    a.download = "uts-rice-qr.png";
     a.href = canvas.toDataURL("image/png");
     a.click();
   };
-  document.getElementById("share").onclick = async () => {
+  $("share").onclick = async () => {
     try {
       if (navigator.share) await navigator.share({ title: CONFIG.companyName, url: qrTarget });
-      else { await navigator.clipboard.writeText(qrTarget); alert("Link copied!"); }
+      else { await navigator.clipboard.writeText(qrTarget); $("share").textContent = "Link copied!"; }
     } catch (e) {}
   };
-  document.getElementById("print").onclick = () => window.print();
+  $("print").onclick = () => window.print();
 </script>
 </body>
 </html>
